@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import transtalate from './lang/traslate';
-import AboutCards from './components/aboutcards';
-
+import HeaderButtons from './components/HeaderButtons';
 function App() {
-	const [userLang, setUserLang] = useState('es');
+	const [userLang] = useState('es');
 
 	//@ts-ignore
 	const lang = transtalate(userLang);
@@ -25,6 +24,25 @@ function App() {
 	return (
 		<div className='App'>
 			<div className='about'>
+				<header>
+					<h1>
+						<div className='headercontainer'>
+							<HeaderButtons
+								title={lang?.skill.title}
+							></HeaderButtons>
+							<HeaderButtons
+								title={lang?.proyect.title}
+							></HeaderButtons>
+							<HeaderButtons
+								title={lang?.skill.title}
+							></HeaderButtons>
+							<HeaderButtons
+								title={lang?.moreabout?.title}
+							></HeaderButtons>
+						</div>
+					</h1>
+				</header>
+
 				<div className='aboutcontainer'>
 					<div>
 						<img
@@ -37,17 +55,6 @@ function App() {
 						<h2>{lang?.about.title}</h2>
 						<p> {lang?.about.aboutme}</p>
 					</div>
-				</div>
-				<div className='cardscontainer'>
-					{AboutCards({
-						title: lang?.skill.title,
-						description: lang?.skill.description,
-					})}
-					{AboutCards({
-						title: lang?.proyect.title,
-						description: lang?.proyect.description,
-					})}
-					{AboutCards({ title: '5', description: '6' })}
 				</div>
 			</div>
 		</div>

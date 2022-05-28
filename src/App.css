@@ -1,44 +1,40 @@
 .App {
-  text-align: center;
-  align-items: center;
-  min-height: 100%;
-
-      
+	text-align: center;
+	align-items: center;
+	min-height: 100%;
 }
-.about{
-  background: '#BE3E01';
-    background: linear-gradient(180deg, #BE3E01 0%, rgba(255, 3, 98, 0) 100%);
+.about {
+	background: #be3e01;
+	background: linear-gradient(180deg, #be3e01 0%, rgba(255, 3, 98, 0) 100%);
 }
 
-#info{ 
-  margin-top: 20px;
+#info {
+	margin-top: 20px;
 
-  display: block;
-  }
+	display: block;
+}
 #info p {
-margin: auto auto;
-  text-align: center;
-  inline-size: 600px;
-  font-size: 20px;
-  font-weight: bold;
+	margin: auto auto;
+	text-align: center;
+	inline-size: 600px;
+	font-size: 20px;
+	font-weight: bold;
 }
-#avatar{
-  margin-top: 100px;
-  width: 300px;
-  border-radius: 50%;
-  border: 2px solid rgb(162, 32, 32);
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+#avatar {
+	margin-top: 50px;
+	width: 300px;
+	border-radius: 50%;
+	border: 3px solid rgb(0, 0, 0);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
 }
 
-
-.cardscontainer{
- 
-  
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
+.headercontainer {
+	margin-top: 50px;
+	display: inline-flex;
+	gap: 50px;
+	align-items: center;
+	justify-content: center;
+}
