@@ -6,6 +6,13 @@
 	background: linear-gradient(180deg, #be3e01 0%, rgba(255, 3, 98, 0) 100%);
 }
 
+.headercontainer h1 {
+	display: inline-flex;
+	gap: 50px;
+	align-items: center;
+	justify-content: center;
+}
+
 #info {
 	margin-top: 20px;
 
@@ -27,16 +34,6 @@
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
-}
-
-.headercontainer {
-	padding-top: 50px;
-}
-.headercontainer h1 {
-	display: inline-flex;
-	gap: 50px;
-	align-items: center;
-	justify-content: center;
 }
 
 .lds-ring {
@@ -85,5 +82,14 @@
 		-moz-transform: translateX(-100%);
 		-ms-transform: translateX(-100%);
 		-o-transform: translateX(-100%);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

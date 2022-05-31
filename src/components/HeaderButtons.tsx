@@ -1,10 +1,9 @@
-import './headerButtons.css';
 import styled from 'styled-components';
 
 export default function HeaderButtons({ title = '' }) {
 	const Button1 = styled.button`
 		border: none;
-		background: #be3e01;
+		background: none;
 		border-radius: 20%;
 		width: 200px;
 		text-align: center;
@@ -12,7 +11,7 @@ export default function HeaderButtons({ title = '' }) {
 		display: inline-block;
 		font-size: 16px;
 		&:hover {
-			color: blue;
+			cursor: pointer;
 		}
 	`;
 	return (

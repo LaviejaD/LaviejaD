@@ -14,17 +14,13 @@ export function Loaderanimatins({ isLoading }: { isLoading: boolean }) {
 		 animation:  ${animations} 1s;`;
 
 	return (
-		<Loader onAnimationEnd={(e) => e}>
-			{isLoading ? (
-				''
-			) : (
-				<div className='lds-ring'>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			)}
+		<Loader onAnimationEnd={(e) => e.currentTarget.remove()}>
+			<div className='lds-ring'>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 			<br />
 			<h2>{isLoading ? 'Loading img' : 'Ready'}</h2>
 		</Loader>

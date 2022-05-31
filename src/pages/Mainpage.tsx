@@ -3,13 +3,11 @@ import axios from 'axios';
 import { Loaderanimatins } from '../components/animations/loader';
 import transtalate from '../lang/traslate';
 
-export default function Mainpage() {
-	const [userLang] = useState('es');
-
+export default function Mainpage({ userLang }: { userLang: string }) {
 	//@ts-ignore
 	const lang = transtalate(userLang);
 	const [avatar, updateavatar] = useState('');
-	const [loader, setloader] = useState(true);
+	const [loader, setloader] = useState(false);
 
 	useEffect(() => {
 		axios({ url: 'https://api.github.com/users/LaviejaD', method: 'get' })
