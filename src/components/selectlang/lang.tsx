@@ -15,6 +15,9 @@ export const Selectl = styled.div`
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
+	&:hover {
+		cursor: pointer;
+	}
 `;
 
 export function Selectlenguaje({ userLang }: { userLang: string }) {
