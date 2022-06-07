@@ -1,33 +1,35 @@
-import style from 'styled-components';
-import { useState } from 'react';
-const Loader = style.div`
-	 position: absolute;
-	  background: linear-gradient(0deg, rgba(246,111,8,0.9472163865546218) 0%, rgba(251,62,6,1) 52%, rgba(255,3,98,1) 100%);
-	   width: 100%; 
-	   height: 100%;
-	    top: 0;
-		 left: 0;
-		 z-index: 1;
-		 
-		 animation:  ${(e) => e.theme.animations} 1s;`;
+import { useState, useEffect } from 'react';
 
-export function Loaderanimatins({ time }: { time: number }) {
+export function Loaderanimatins({
+	time = 0,
+	loaderready = false,
+}: {
+	time?: number;
+	loaderready?: boolean;
+}) {
 	const [animations, setanimation] = useState('');
 
-	setTimeout(() => setanimation('slide-left'), time * 1000);
+	useEffect(() => {
+		if (time > 0) {
+			setTimeout(() => {
+				setanimation(' slide-left');
+				//@ts-ignore
+				document.getElementById('loader').classList.add('slide-left');
+			}, time * 1000);
+		}
+
+		if (loaderready != undefined) {
+			setTimeout(() => {
+				setanimation(' slide-left');
+				//@ts-ignore
+				document.getElementById('loader').classList.add('slide-left');
+			}, 300);
+			//@ts-ignore
+		}
+	}, [loaderready]);
 	return (
-		<Loader
-			theme={{ animations }}
-			onAnimationEnd={(e) => e.currentTarget.remove()}
-		>
-			<div className='lds-ring'>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-			<br />
-			<h2>{animations != '' ? 'Loading' : 'Ready'}</h2>
-		</Loader>
+		<div id='loader' onAnimationEnd={(e) => e.currentTarget.remove()}>
+			<h2>{animations == '' ? 'Loading' : 'Ready'}</h2>
+		</div>
 	);
 }

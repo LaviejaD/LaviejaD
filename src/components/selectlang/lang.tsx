@@ -1,13 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-export const Selectl = styled.div`
+export const Selectl = styled.button`
 	display: grid;
 	align-items: center;
-	border: solid 1px black;
+	border: solid 3px black;
 	position: absolute;
 	with: 100%;
-	top: 80%;
-	left: 90%;
+	top: 90%;
+	left: 86%;
 	background-image: url(${(props) => props.theme.img});
 	width: 50px;
 	height: 50px;
@@ -17,6 +17,7 @@ export const Selectl = styled.div`
 	border-radius: 50%;
 	&:hover {
 		cursor: pointer;
+		animation: mousehover 1s infinite;
 	}
 `;
 
