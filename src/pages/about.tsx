@@ -44,8 +44,25 @@ export default function Aboutpage({
 			>
 				<div>
 					<img id='avatar' src={avatar} alt='avatar' />
+					<div>
+						<a target='_blank' href='https://github.com/LaviejaD'>
+							<img
+								className='imgredes'
+								src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcKR3b2Q6L7kLv3kV04kBtcs-FaYRsYfxRQ&usqp=CAU'
+							/>
+						</a>
+						<img
+							className='imgredes'
+							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcKR3b2Q6L7kLv3kV04kBtcs-FaYRsYfxRQ&usqp=CAU'
+						/>
+						<img
+							className='imgredes'
+							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcKR3b2Q6L7kLv3kV04kBtcs-FaYRsYfxRQ&usqp=CAU'
+						/>
+					</div>
 				</div>
 				<div id='info'>
+					<h2>{userLang === 'en' ? 'About me' : 'Sobre me'}</h2>
 					<p> {lang?.about.aboutme}</p>
 				</div>
 			</div>

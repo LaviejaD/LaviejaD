@@ -4,7 +4,7 @@ export default function Translate(leng: string) {
 			about: {
 				title: 'Sobre mi',
 				aboutme:
-					'Soy OnlyD un programador autodidacta, apasionado por la tecnología, con una gran capacidad de adaptación y una gran capacidad de trabajo en equipo. Me gusta aprender nuevas tecnologías y desarrollar aplicaciones web',
+					'Soy un programador autodidacta, apasionado por la tecnología, con una gran capacidad de adaptación y una gran capacidad de trabajo en equipo. Me gusta aprender nuevas tecnologías y desarrollar aplicaciones web',
 			},
 
 			skill: {
@@ -17,9 +17,9 @@ export default function Translate(leng: string) {
 	} else {
 		return {
 			about: {
-				title: 'About me',
+				title: 'About',
 				aboutme:
-					'I am OnlyD, a self-taught programmer, passionate about technology, with a great capacity for adaptation and a great capacity for teamwork. I like to learn new technologies and develop web applications',
+					'I am a self-taught programmer, passionate about technology, with a great capacity for adaptation and a great capacity for teamwork. I like to learn new technologies and develop web applications',
 			},
 
 			skill: {

@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()]
   , base: "/LaviejaD/",
   server: {
-    host: '192.168.0.11'
+    host: 'localhost',
   }
   ,
 })
