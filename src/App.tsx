@@ -3,10 +3,10 @@ import { Loaderanimatins } from './components/animations/loader';
 import './App.css';
 import transtalate from './lang/traslate';
 import HeaderButtons from './components/HeaderButtons';
-import Aboutpage from './pages/about';
+import Aboutpage from './sections/about';
 import { Selectlenguaje } from './components/selectlang/lang';
 import { useSearchParams } from 'react-router-dom';
-import { Skill } from './pages/skill';
+import { Skill } from './sections/skill';
 function App() {
 	const [isloading, setloading] = useState(true);
 	const [param] = useSearchParams();
@@ -19,31 +19,46 @@ function App() {
 		<div className='App'>
 			<Selectlenguaje userLang={userLang} />
 			<Loaderanimatins loaderready={isloading} />
-
-			<div className='container'>
-				<header className='headercontainer'>
-					<h1>OnlyD</h1>
-					<ul>
-						<li>
+			<header className='headercontainer'>
+				<h1>OnlyD</h1>
+				<ul>
+					<li>
+						<a href='#about'>
 							<HeaderButtons title={langtranslate?.about.title} />
-						</li>
-						<li>
+						</a>
+					</li>
+					<li>
+						<a href='#proyect'>
 							<HeaderButtons
 								title={langtranslate?.proyect.title}
 							/>
-						</li>
-						<li>
+						</a>
+					</li>
+					<li>
+						<a href='#skill'>
 							<HeaderButtons title={langtranslate?.skill.title} />
-						</li>
-					</ul>
-				</header>
+						</a>
+					</li>
+					<li>
+						<a href='#contact'>
+							<HeaderButtons
+								title={langtranslate?.contact.title}
+							/>
+						</a>
+					</li>
+				</ul>
+			</header>
+			<div className='container' id='about'>
 				<Aboutpage setloading={setloading} userLang={userLang} />
 			</div>
-			<div className='container'>
-				<h2>{userLang === 'en' ? 'nothing' : 'nada'}</h2>
+			<div className='container' id='proyect'>
+				<h2>{userLang === 'en' ? 'proyect' : 'proyectos'}</h2>
 			</div>
-			<div className='container'>
+			<div className='container' id='skill'>
 				<Skill setloading={setloading} lang={userLang} />
+			</div>
+			<div className='container' id='contact'>
+				<h2>{userLang === 'en' ? 'contact me' : 'contactame'}</h2>
 			</div>
 		</div>
 	);

@@ -13,6 +13,9 @@ export default function Translate(leng: string) {
 			proyect: {
 				title: 'Proyectos',
 			},
+			contact: {
+				title: 'Contacto',
+			},
 		};
 	} else {
 		return {
@@ -27,6 +30,9 @@ export default function Translate(leng: string) {
 			},
 			proyect: {
 				title: 'Proyects',
+			},
+			contact: {
+				title: 'Contact',
 			},
 		};
 	}

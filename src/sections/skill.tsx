@@ -11,44 +11,38 @@ export function Skill({
 	setloading: (loading: boolean) => void;
 }) {
 	const [currentSkill, setCurrentSkill] = useState('');
+	const [currentAnimation, setCurrentAnimation] = useState('');
+
+	const buttonf = document.getElementById('frontendbutton');
+	const buttonb = document.getElementById('backendbutton');
+	const buttond = document.getElementById('databasebutton');
+
+	const frontend = document.getElementById('frontend');
+	const backend = document.getElementById('backend');
+	const database = document.getElementById('database');
 
 	const buttonclick = (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
-		const buttonf = document.getElementById('frontendbutton');
-		const buttonb = document.getElementById('backendbutton');
-		const buttond = document.getElementById('databasebutton');
-
-		const frontend = document.getElementById('frontend');
-		const backend = document.getElementById('backend');
-		const database = document.getElementById('database');
-
 		if (currentSkill.length > 0) {
 			document
 				.getElementById(currentSkill)
 				?.classList.remove('skillbutton-clicked');
 		}
 
-		frontend!.style.display = 'block';
-		backend!.style.display = 'block';
-		database!.style.display = 'block';
+		frontend!.style.display = 'none';
+		backend!.style.display = 'none';
+		database!.style.display = 'none';
 
 		if (e.currentTarget.id === 'frontendbutton') {
-			//.slide-left
+			frontend!.style.display = 'block';
 			buttonf!.classList.add('skillbutton-clicked');
-
-			backend!.style.display = 'none';
-			database!.style.display = 'none';
 		} else if (e.currentTarget.id === 'backendbutton') {
+			backend!.style.display = 'block';
 			buttonb!.classList.add('skillbutton-clicked');
-
-			frontend!.style.display = 'none';
-			database!.style.display = 'none';
 		} else {
+			database!.style.display = 'block';
 			buttond!.classList.add('skillbutton-clicked');
-
-			frontend!.style.display = 'none';
-			backend!.style.display = 'none';
 		}
 
 		if (e.currentTarget.id === currentSkill) {
@@ -64,6 +58,7 @@ export function Skill({
 
 	return (
 		<div onLoad={() => setloading(true)} className='skillcontainer'>
+			<h1>Skill</h1>
 			<div className='skillbuttoncontainer'>
 				<button
 					id='frontendbutton'
@@ -87,13 +82,14 @@ export function Skill({
 					Database
 				</button>
 			</div>
-			<div className='slide-to-center' id='frontend'>
+
+			<div id='frontend'>
 				<Skillcard skills={skills.frontend} />
 			</div>
-			<div className='slide-to-center' id='backend'>
+			<div id='backend'>
 				<Skillcard skills={skills.backend} />
 			</div>
-			<div className='slide-to-center' id='database'>
+			<div id='database'>
 				<Skillcard skills={skills.database} />
 			</div>
 		</div>

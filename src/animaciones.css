@@ -2,10 +2,7 @@
 	animation: slide-left 1s ease-in-out;
 	-webkit-animation: slide-left 1s ease-in-out;
 }
-.slide-to-center {
-	animation: 'slide-to-center' 1s;
-	-webkit-animation: 'slide-to-center' 1s;
-}
+
 @keyframes slide-to-center {
 	0% {
 		transform: translateX(-100%);
