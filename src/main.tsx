@@ -7,7 +7,7 @@ import './animaciones.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<BrowserRouter basename='/LaviejaD'>
 			<App />
 		</BrowserRouter>
 	</React.StrictMode>

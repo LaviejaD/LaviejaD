@@ -36,13 +36,13 @@ export function Skill({
 
 		if (e.currentTarget.id === 'frontendbutton') {
 			frontend!.style.display = 'block';
-			buttonf!.classList.add('skillbutton-clicked');
+			//			buttonf!.classList.add('skillbutton-clicked');
 		} else if (e.currentTarget.id === 'backendbutton') {
 			backend!.style.display = 'block';
-			buttonb!.classList.add('skillbutton-clicked');
+			//		buttonb!.classList.add('skillbutton-clicked');
 		} else {
 			database!.style.display = 'block';
-			buttond!.classList.add('skillbutton-clicked');
+			//	buttond!.classList.add('skillbutton-clicked');
 		}
 
 		if (e.currentTarget.id === currentSkill) {

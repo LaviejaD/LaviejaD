@@ -1,5 +1,8 @@
 .skillcontainer {
-	padding-top: 50px;
+	background-color: #de0599;
+}
+
+.skillcontainer h1 {
 }
 
 .skillbuttoncontainer {
@@ -7,7 +10,6 @@
 	gap: 5px;
 	align-items: center;
 	grid-template-columns: repeat(3, 1fr);
-
 	padding-bottom: 50px;
 }
 .skillbutton {
@@ -20,7 +22,7 @@
 	font-size: 3vh;
 	cursor: pointer;
 }
-.skillbutton-clicked {
+.skillbutton:focus {
 	background-color: red;
 }
 
@@ -30,8 +32,6 @@
 	display: grid;
 	gap: 50px;
 	grid-template-columns: repeat(3, minmax(100px, 1fr));
-}
-.skillcard {
 }
 
 .skillcardflex {

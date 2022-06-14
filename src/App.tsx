@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Loaderanimatins } from './components/animations/loader';
+import { useLocation } from 'react-router-dom';
 import './App.css';
 import transtalate from './lang/traslate';
 import HeaderButtons from './components/HeaderButtons';
@@ -11,13 +12,25 @@ function App() {
 	const [isloading, setloading] = useState(true);
 	const [param] = useSearchParams();
 
-	const [userLang] = useState(param.get('lang') ?? 'en');
+	const [userLang, setLang] = useState(param.get('lang') ?? 'en');
+	const location = useLocation();
+	const [langtranslate, settraslate] = useState(transtalate(userLang));
 
-	const [langtranslate] = useState(transtalate(userLang));
-
+	useEffect(() => {
+		setLang(param.get('lang') ?? 'en');
+		console.log(userLang);
+		settraslate(transtalate(userLang));
+		console.log(langtranslate);
+	}, [location]);
+	if (param.get('lang') === null) {
+		return (
+			<>
+				<Selectlenguaje userLang={userLang} />
+			</>
+		);
+	}
 	return (
 		<div className='App'>
-			<Selectlenguaje userLang={userLang} />
 			<Loaderanimatins loaderready={isloading} />
 			<header className='headercontainer'>
 				<h1>OnlyD</h1>
@@ -51,13 +64,25 @@ function App() {
 			<div className='container' id='about'>
 				<Aboutpage setloading={setloading} userLang={userLang} />
 			</div>
-			<div className='container' id='proyect'>
+			<div
+				className='container'
+				id='proyect'
+				style={{ backgroundColor: '#99DE05' }}
+			>
 				<h2>{userLang === 'en' ? 'proyect' : 'proyectos'}</h2>
 			</div>
-			<div className='container' id='skill'>
+			<div
+				className='container'
+				id='skill'
+				style={{ backgroundColor: '#DE0599' }}
+			>
 				<Skill setloading={setloading} lang={userLang} />
 			</div>
-			<div className='container' id='contact'>
+			<div
+				className='container'
+				id='contact'
+				style={{ backgroundColor: '#DE4A05' }}
+			>
 				<h2>{userLang === 'en' ? 'contact me' : 'contactame'}</h2>
 			</div>
 		</div>
