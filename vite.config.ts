@@ -1,14 +1,13 @@
-import { defineConfig, } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()]
-  , base: "/LaviejaD/",
+  plugins: [react()],
+  base: "/LaviejaD",
   server: {
-    host: 'localhost',
-  }
-  ,
-})
+    host: "localhost",
+  },
+});
 
-console.log("ViteJS config loaded")
+console.log("ViteJS config loaded");

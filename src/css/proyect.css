@@ -1,0 +1,43 @@
+.containerproyect {
+}
+
+.containerproyectcard {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+}
+.cardproyect {
+  width: 30vw;
+  background-color: aliceblue;
+}
+.cardproyect:hover {
+  width: 30vw;
+  background-color: red;
+  transform: scale(1);
+  animation: mousehover 1s;
+  -webkit-animation: mousehover 1s;
+}
+.cardproyectimg {
+  width: 20vw;
+}
+
+.containerproyectbutton {
+  font-size: large;
+  top: 100;
+  gap: 1vw;
+  display: flex;
+  justify-content: center;
+}
+.proyectbutton {
+  width: 9vw;
+  height: 5vh;
+  background-color: var(--azullindo);
+  cursor: pointer;
+}
+
+.proyectbutton:hover {
+  content: "";
+  background-color: red;
+}
